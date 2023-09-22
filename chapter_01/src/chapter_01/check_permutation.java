@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author jordanprescott
  *
  */
-public class check_permutation_2 {
+public class check_permutation {
 
 		public static void main(String[] args) {
 			

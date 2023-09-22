@@ -18,8 +18,34 @@ package chapter_01;
 public class one_way {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		one_edit_away("pale", "ple"); // true
+		one_edit_away("pales", "pale"); // true
+		one_edit_away("pale", "bale"); // true
+		one_edit_away("pale", "bake"); // true
+		
+		
+	}
+	
+	/**
+	 * 1. Loop through each index in string 
+	 * 2. Perform each action on index and compare to value 
+	 * 3. Return true if one move away
+	 */
+	public static boolean one_edit_away(String foo, String bar) {
+		
+		int length = foo.length();
 
+		for (int i = 0; i < length; i++) {
+		    char character = foo.charAt(i);
+
+		    // Perform actions and check here 
+		    
+		    
+		}		
+		
+		return false;
+		
 	}
 
 }
