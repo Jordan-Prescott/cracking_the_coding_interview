@@ -2,7 +2,7 @@ package sandbox;
 
 import java.util.Hashtable;
 
-public class hashtable {
+public class hashtables {
 
 	public static void main(String[] args) {
 		
