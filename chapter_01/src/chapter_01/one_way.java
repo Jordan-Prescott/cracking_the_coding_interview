@@ -23,28 +23,43 @@ public class one_way {
 		one_edit_away("pales", "pale"); // true
 		one_edit_away("pale", "bale"); // true
 		one_edit_away("pale", "bake"); // true
-		
+		one_edit_away("pale", "bakes"); // true
 		
 	}
 	
-	/**
-	 * 1. Loop through each index in string 
-	 * 2. Perform each action on index and compare to value 
-	 * 3. Return true if one move away
-	 */
 	public static boolean one_edit_away(String foo, String bar) {
+				
+		char[] string_1 = foo.toCharArray();
+		char[] string_2 = bar.toCharArray();
 		
-		int length = foo.length();
+		int string_1_length = string_1.length;
+		int string_2_length = string_2.length;
+		
+		if(string_1_length > string_2_length) { // remove char
+			
+			for (int i = 0; i < string_1_length; i++) {
+				System.out.println("");
+			}
+			
+		} else if(string_1_length < string_2_length) { // add char
 
-		for (int i = 0; i < length; i++) {
-		    char character = foo.charAt(i);
+			System.out.println("add");
+			
+		} else if(string_1_length == string_2_length) {
 
-		    // Perform actions and check here 
-		    
-		    
-		}		
+			System.out.println("replace"); // replace char
+			
+		} else {
+
+			System.out.println("miss");
+			
+		}
 		
 		return false;
+		
+	}
+	
+	public static boolean strings_match(CharArray string_1, CharArray string_2) {
 		
 	}
 
