@@ -19,48 +19,54 @@ public class one_way {
 
 	public static void main(String[] args) {
 		
-		one_edit_away("pale", "ple"); // true
-		one_edit_away("pales", "pale"); // true
-		one_edit_away("pale", "bale"); // true
-		one_edit_away("pale", "bake"); // true
-		one_edit_away("pale", "bakes"); // true
+		
+		System.out.println(isOneEditAway("pale", "ple")); // true
+		System.out.println(isOneEditAway("pales", "pale"));
+		System.out.println(isOneEditAway("pale", "bale"));
+		System.out.println(isOneEditAway("pale", "bake"));
+		System.out.println(isOneEditAway("pale", "bakes"));
+		
 		
 	}
 	
-	public static boolean one_edit_away(String foo, String bar) {
-				
-		char[] string_1 = foo.toCharArray();
-		char[] string_2 = bar.toCharArray();
-		
-		int string_1_length = string_1.length;
-		int string_2_length = string_2.length;
-		
-		if(string_1_length > string_2_length) { // remove char
-			
-			for (int i = 0; i < string_1_length; i++) {
-				System.out.println("");
-			}
-			
-		} else if(string_1_length < string_2_length) { // add char
+	public static boolean isOneEditAway(String str1, String str2) {
+        int len1 = str1.length();
+        int len2 = str2.length();
 
-			System.out.println("add");
-			
-		} else if(string_1_length == string_2_length) {
+        // If the difference in lengths is more than 1, they can't be one edit away.
+        if (Math.abs(len1 - len2) > 1) {
+            return false;
+        }
 
-			System.out.println("replace"); // replace char
-			
-		} else {
+        // Ensure str1 is the shorter string.
+        if (len1 > len2) {
+            String temp = str1;
+            str1 = str2;
+            str2 = temp;
+        }
 
-			System.out.println("miss");
-			
-		}
-		
-		return false;
-		
-	}
-	
-	public static boolean strings_match(CharArray string_1, CharArray string_2) {
-		
-	}
+        int i = 0; // Pointer for str1
+        int j = 0; // Pointer for str2
+        boolean foundDifference = false;
+
+        while (i < len1 && j < len2) {
+            if (str1.charAt(i) != str2.charAt(j)) {
+                // If a difference is found, check if it's the first difference.
+                if (foundDifference) {
+                    return false; // More than one edit away.
+                }
+                foundDifference = true;
+
+                if (len1 == len2) {
+                    i++; // Move both pointers for equal length strings.
+                }
+            } else {
+                i++; // Move the pointer for the shorter string.
+            }
+            j++; // Always move the pointer for the longer string.
+        }
+
+        return true;
+    }
 
 }
