@@ -27,6 +27,9 @@ public class linked_lists {
 		System.out.println(cast.get(4));
 		System.out.println(cast.getFirst());
 		System.out.println(cast.getLast());
+		
+		cast.add(2, "Sophie");
+		System.out.println(cast);
 
 		
 		for(String character: cast) {
