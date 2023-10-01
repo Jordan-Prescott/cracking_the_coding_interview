@@ -24,6 +24,8 @@ public class remove_dups {
 		cast.add("Gerrard");
 		cast.add("Sophie");
 		cast.add("Sophie");
+		cast.add("Sophie");
+		
 		
 		System.out.println(cast);
 		
@@ -35,6 +37,16 @@ public class remove_dups {
 		
 	}
 	
+	
+	/**
+	 * 
+	 * This solution loops the current list and if the item is not in the new linkedlist 
+	 * used as a buffer it is then added. After looping through all items the new linked 
+	 * list is returned where the current list can be updated to the new one.
+	 * 
+	 * @param list
+	 * @return
+	 */
 	public static LinkedList<String> removeDuplicateWithBuffer(LinkedList<String> list) {
 		
 		LinkedList<String> buffer = new LinkedList<>();
@@ -48,22 +60,29 @@ public class remove_dups {
 		return buffer;
 	}
 	
+/**
+ * 
+ * Loops through list and then nested loop loops through remaining item by starting 
+ * at the next index from current word in list. If the two values at i and j (index)
+ * are the same value at j is removed. The counter j is then reduced by one for the 
+ * removed item and so that the next item is not misssed.
+ * 	
+ * @param list
+ * @return list with no duplicates
+ */
 public static LinkedList<String> removeDuplicateNoBuffer(LinkedList<String> list) {
-		
-		
-		int list_len = list.size();
-		
-		
-		for (int i = 0; i < list_len; i++) {
-			
-			list.set(0, list.getLast());
-			
-			for (int j = 1; j < list_len; j++) {
-				if(list.get(0) == list.get(j)) {
+	
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = i + 1; j < list.size(); j++) {
+				
+				if (list.get(i) == list.get(j)) {
+					
 					list.remove(j);
+					
+					j--;
+				
 				}
 			}
-
 		}
 				
 		return list;
