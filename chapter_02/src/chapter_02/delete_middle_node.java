@@ -5,8 +5,8 @@ import java.util.LinkedList;
 /**
  * 
  * Implement an algorithm to delete a node in the middle (i.e., any node but
- * the first and last node, not necessarily the exact middle) of a singly linked list, given only access to
- * that node.
+ * the first and last node, not necessarily the exact middle) of a singly linked list, 
+ * given only access to that node.
  * 
  * EXAMPLE
  * lnput:the node c from the linked lista->b->c->d->e->f
@@ -29,6 +29,14 @@ public class delete_middle_node {
 		linky_listy = middleNodeRemoved(linky_listy);
 		System.out.println(linky_listy);
 
+		Node linky_listy_2 = new Node(1);
+		linky_listy_2.appentToTail(2);
+		linky_listy_2.appentToTail(9);
+		linky_listy_2.appentToTail(24);
+		linky_listy_2.appentToTail(13);
+		
+		System.out.println(linky_listy_2.next.next);
+		
 	}
 	
 	/**
@@ -53,5 +61,20 @@ public class delete_middle_node {
 		return list;
 
 	}
+	
+	/**
+	 * 
+	 * 
+	 * @param list
+	 * @return
+	 */
+	public static Node middleNodeRemoved(Node head) {
+
+		
+
+		return head;
+
+	}
+
 
 }

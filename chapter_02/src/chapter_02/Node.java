@@ -19,5 +19,9 @@ public class Node {
 		n.next = end;
 		
 	}
+	
+	public String toString() {
+        return "Data = " + this.data;
+    }
 
 }
