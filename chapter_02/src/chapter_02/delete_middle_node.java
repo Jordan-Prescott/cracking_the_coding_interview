@@ -75,6 +75,10 @@ public class delete_middle_node {
 		return head;
 
 	}
+	
+	public boolean delet_middle_node(Node node) {
+		return true;
+	}
 
 
 }
