@@ -19,66 +19,22 @@ public class delete_middle_node {
 
 	public static void main(String[] args) {
 		
+		middleNodeRemoved(5);
+		
+	}
+	
+	public static void middleNodeRemoved(Integer n) {
+
 		LinkedList<Integer> linky_listy = new LinkedList<>();
-		
+	
 		linky_listy.add(1);
-		linky_listy.add(2);
-		linky_listy.add(3);
-		linky_listy.add(10);
+		linky_listy.add(5);
+		linky_listy.add(9);
+		linky_listy.add(12);
 		
-		linky_listy = middleNodeRemoved(linky_listy);
-		System.out.println(linky_listy);
-
-		Node linky_listy_2 = new Node(1);
-		linky_listy_2.appentToTail(2);
-		linky_listy_2.appentToTail(9);
-		linky_listy_2.appentToTail(24);
-		linky_listy_2.appentToTail(13);
-		
-		System.out.println(linky_listy_2.next.next);
-		
-	}
-	
-	/**
-	 * 
-	 * This solution removes all middle nodes by looping the list starting with the 
-	 * first index up to but not including the last. This is achived by getting the size
-	 * of the list and minus one and each time an item is removed the counter is also
-	 * reduced by one to match the size of the list.
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static LinkedList<Integer> middleNodeRemoved(LinkedList<Integer> list) {
-
-		for (int i = 1; i < list.size() - 1; i++) {
-			
-			list.remove(i);
-			i--;
-
-		}
-
-		return list;
-
-	}
-	
-	/**
-	 * 
-	 * 
-	 * @param list
-	 * @return
-	 */
-	public static Node middleNodeRemoved(Node head) {
-
+		linky_listy.remove(linky_listy.indexOf(n));
 		
 
-		return head;
-
 	}
-	
-	public boolean delet_middle_node(Node node) {
-		return true;
-	}
-
 
 }
