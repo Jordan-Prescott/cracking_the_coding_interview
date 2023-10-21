@@ -13,6 +13,11 @@ public class linked_lists {
 		cast.add("Super hans");
 		cast.add("Dobbie");
 		cast.add("Gerrard");
+		cast.add("Johnson");
+		cast.add("Big Sues");
+		cast.add("Dobbie");
+		cast.add("Barny");
+		cast.add("Nancy");
 		
 		System.out.println(cast);
 		
@@ -28,14 +33,34 @@ public class linked_lists {
 		System.out.println(cast.getFirst());
 		System.out.println(cast.getLast());
 		
-		cast.add(2, "Sophie");
-		System.out.println(cast);
+		// Runner technique to find middle object
+		System.out.println(cast.get(middleObject(cast)));
 
+	}
+	
+	
+	/**
+	 * 
+	 * This method uses the runner technique to return the index of the middle
+	 * object in a LinkedList.
+	 * 
+	 * @param cast LinkedList
+	 * @return middle object of linked list
+	 */
+	public static int middleObject(LinkedList<String> cast) {
 		
-		for(String character: cast) {
-			System.out.println(character);
+		int slow = 0;
+		int fast = 1;
+		
+		while (fast < cast.size()) {
+			
+			slow++;
+			fast += 2;
+			
 		}
-
+		
+		return slow;
+		
 	}
 
 }
