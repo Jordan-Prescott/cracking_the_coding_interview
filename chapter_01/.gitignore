@@ -1,1 +1,11 @@
 /bin/
+
+# eclipse
+*.settings
+*.project
+
+# java 
+*.classpath
+
+# mac
+*DS_Store
